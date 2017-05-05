@@ -14,12 +14,12 @@ $.ajax({
 
 function updateUserInformation(index, user) {
     var $user = $('.user-profile').eq(index);
-    $user.find('.caption').find('.name').text(user.name);
+    $user.find('.name').text(user.name);
     $user.find('.company').find('.name').text(user.company.name);
-    $user.find('.street').text(user.company.street);
-    $user.find('.city').text(user.company.city);
-    $user.find('.state').text(user.company.state);
-    $user.find('.zip').text(user.company.zip);
+    $user.find('.company').find('.street').text(user.company.street);
+    $user.find('.company').find('.city').text(user.company.city);
+    $user.find('.company').find('span').find('.state').text(user.company.state);
+    $user.find('.company').find('.zip').text(user.company.zip);
     $user.find('a').text(user.company.email);
 
     $user
