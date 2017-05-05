@@ -4,11 +4,49 @@ $.ajax({
     success: function (response) {
         console.log(response);
 
+        for (var i = 0; i < response.length; i++) {
+            var user = response[i];
+            console.log(response.length);
+        }
+    }
+})
+
+function updateUserInformation(index, user) {
+    var $user = $('.user-profile').eq(index);
+    $user.find('.name').text(user.name);
+    $user.find('.company').find('.name').text(company.name);
+    $user.find('.street').text(company.street);
+    $user.find('.city').text(company.city);
+    $user.find('.state').text(user.company.state);
+    $user.find('.zip').text(user.company.zip);
+    $user.find('a').text(user.company.email);
+
+    $user
+        .find('.user-website')
+        .find('a')
+        .text(user.website)
+        .attr('href', "http://" + user.website)
+}
+
+ /*<div class="col-sm-6 col-md-3 user-profile">
+                <div class="thumbnail">
+                    <img src="https://placehold.it/200x200" alt="" />
+                    <div class="caption">
+                        <h3 class="name">Steve Jobs</h3>
+                        <address class="company">
+                            <strong class="name">Apple Inc.</strong><br>
+                            <span class="street">1 Infinite Loop</span><br>
+                            <span class="city">Cupertino</span>, <span class="state">CA</span> <span class="zip">95014</span>
+                            <a href="mailto:sjobs@apple.com" class="email">sjobs@apple.com</a>
+                        </address>
+                    </div>
+                </div>
+            </div>*/
 
 // This assignment will be covering jQuery's [`$.ajax`][$.ajax], [`find`][jQuery find], [`attr`][jQuery attr], [`text`][jQuery text], and [`css`][jQuery css] function.
 
 
-// 1. Using the [$.ajax] `success` function, loop through the response. Do not use a [hard coded][hard coding] number in the loop.
+// 4. Using the [$.ajax] `success` function, loop through the response. Do not use a [hard coded][hard coding] number in the loop.
 
 // 1. Create a new function that updates one user at a time. Call this new function inside the loop in step 4.
 
