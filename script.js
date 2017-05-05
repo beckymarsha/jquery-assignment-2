@@ -14,6 +14,7 @@ $.ajax({
 
 function updateUserInformation(index, user) {
     var $user = $('.user-profile').eq(index);
+    $user.find('img').attr('src', user.picture)
     $user.find("h3").text(user.name.first + " " + user.name.last);
     $user.find('.company').find('.name').text(user.company.name);
     $user.find('.company').find('.street').text(user.company.address.street);
