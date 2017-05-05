@@ -7,16 +7,17 @@ $.ajax({
         for (var i = 0; i < response.length; i++) {
             var user = response[i];
             console.log(response.length);
+              updateUserInformation(i, user)
         }
     }
 })
 
 function updateUserInformation(index, user) {
     var $user = $('.user-profile').eq(index);
-    $user.find('.name').text(user.name);
-    $user.find('.company').find('.name').text(company.name);
-    $user.find('.street').text(company.street);
-    $user.find('.city').text(company.city);
+    $user.find('.caption').find('.name').text(user.name);
+    $user.find('.company').find('.name').text(user.company.name);
+    $user.find('.street').text(user.company.street);
+    $user.find('.city').text(user.company.city);
     $user.find('.state').text(user.company.state);
     $user.find('.zip').text(user.company.zip);
     $user.find('a').text(user.company.email);
