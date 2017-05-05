@@ -7,26 +7,26 @@ $.ajax({
         for (var i = 0; i < response.length; i++) {
             var user = response[i];
             console.log(response.length);
-              updateUserInformation(i, user)
+            updateUserInformation(i, user)
         }
     }
 })
 
 function updateUserInformation(index, user) {
     var $user = $('.user-profile').eq(index);
-    $user.find('.name').text(user.name);
+    $user.find('h3').text(user.name);
     $user.find('.company').find('.name').text(user.company.name);
     $user.find('.company').find('.street').text(user.company.street);
     $user.find('.company').find('.city').text(user.company.city);
     $user.find('.company').find('span').find('.state').text(user.company.state);
     $user.find('.company').find('.zip').text(user.company.zip);
     $user.find('a').text(user.company.email);
-
-    $user
-        .find('.user-website')
+ $user
+        .find('.email')
         .find('a')
-        .text(user.website)
-        .attr('href', "http://" + user.website)
+        .text(user.email)
+        .attr('href', "mailto:" + user.email)
+
 }
 
  /*<div class="col-sm-6 col-md-3 user-profile">
